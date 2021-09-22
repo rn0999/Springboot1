@@ -12,14 +12,20 @@ import javax.persistence.Table;
 public class Student {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
-	private int rollno;
+	private int id;
 	private String fname;
 	private String lname;
 	private long phoneno;
 	@Column(name = "address")
-	private String Address;
+	private String address;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getFname() {
 		return fname;
@@ -46,11 +52,17 @@ public class Student {
 	}
 
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [rollno=" + id + ", fname=" + fname + ", lname=" + lname + ", phoneno=" + phoneno + ", address="
+				+ address + "]";
 	}
 
 }
